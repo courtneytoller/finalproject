@@ -1,0 +1,26 @@
+--Rank, Brand/Model, Overall Rating, Price, Durability, Stabilization, Firmness, Type
+1, Essentia- Stratami, 81, $2,445, Excellent, Excellent, 6, Bed-In-A-Box
+2, Reverie- Dream Supreme II Hybrid Sleep System Firm, 81, $3,500, Excellent, Very Good, 4, Traditional
+3, Sleep on Latex- Pure Green Firm, 81, $1,200, Excellent, Very Good, 7, Bed-In-A-Box
+4, Casper- The Casper, 80, $950, Excellent, Very Good, 5, Bed-In-A-Box
+5, Casper- The Wave, 80, $1,850, Excellent, Very Good, 3, Bed-In-A-Box
+6, Serta- Luxury 12" Gel Memory Foam, 78, $500, Excellent, Very Good, 7, Bed-In-A-Box
+7, Lull- The Lull, 78, $800,Excellent, Very Good, 6, Bed-In-A-Box
+8, GhostBed- GhostBed, 77, $795Excellent, Very Good, 7, Bed-In-A-Box
+9, SleepInnovation- Marley, 77, $430, Excellent, Very Good, 7, Bed-In-A-Box
+10, Purple- The Purple Bed, 76, $1,000, Excellent, Very Good, 3, Bed-In-A-Box
+11, My Pillow- 10" Mattress, 74, $900, Excellent, Very Good, 6, Bed-In-A-Box
+12, Ashley Sleep- The Perfect 10, 74, $700, Excellent, Very Good, 4, Bed-In-A-Box
+13,Tuft & Needle-T&N Mattress, 74, $575, Excellent, Very Good, 5, Bed-In-A-Box
+14, Serta-iComfort Savant EverFeel, 74, $1,575, Excellent, Very Good, 4, Traditional
+15, Reverie- Dream Supreme II Hybrid Sleep System Medium, 73, $3,500, Excellent, Very Good, 3, Traditional
+16, Brentwood Home-Sequoia Euro Top, 72, $1,495, Excellent, Very Good, 5, Bed-In-A-Box
+17, Spring Air- BAck Supporter Natalie(Costco), 71, $1,100, Average, Very Good, 7, Traditional
+18, Bear- Queen, 71, $850, Excellent, Very Good, 6, Bed-In-A-Box
+19, OrganicPedic-by OMI Flora Nouveau, 71, $4,445, Excellent, Very Good, 4, Traditional
+20, Ikea- Morgongava,70, $1,000, Very Good, Very Good, 5, Traditional
+21, Novosbed- Memory Foam, 69, $1,100, Very Good, Average, 4, Bed-In-A-Box
+22, Eight- The Smart Mattress, 69, $1,050, Excellent, Very Good, 5, Traditional
+23, Luxi- The Luxi Soft, 69, $1,100, Excellent, Very Good, 4, Bed-In-A-Box
+24, Yogabed- Luxury Foam Y10, 69, $850, Excellent, Very Good, 6, Bed-In-A-Box
+25 Reverie- Dream Supreme II Hybrid Sleep System Soft, 69, $3500, Excellent, Very Good, 3, Traditional
