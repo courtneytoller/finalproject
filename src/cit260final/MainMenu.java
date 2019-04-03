@@ -44,12 +44,6 @@ public class MainMenu extends Menu {
         };
     }
     
-    //handleFinance which will calculate the payment per month based on 1(5%), 3(3%), or 5(2%) years.
- /*   protected double handleFinance(double price, int years, double cashDown) {
-    	// from userInput class we will pull price, amount of years, and any cash down
-    	//to calculate monthly payment on a mattress. This method will return
-    	// the payment and display for user.
-    }*/
     /**
      * Handle the user's menu selection.
      * @param key
@@ -57,9 +51,7 @@ public class MainMenu extends Menu {
      */
     @Override
     protected boolean handleMenuSelection(char key) {
-        
-        
-        
+             
         switch (Character.toUpperCase(key)) {
             case '1': 
             	Menu mattressMenu = new MattressMenu();
@@ -83,6 +75,11 @@ public class MainMenu extends Menu {
         
         return true;
     }
+    
+    /**
+     * getters and setters for years, cashDown
+     * @return
+     */
     public double getYears() {
     	return years;
     }
@@ -98,8 +95,19 @@ public class MainMenu extends Menu {
     public void setCashDown(double cashDown) {
     	this.cashDown = cashDown;
     }
+    /**
+     * handleFinance calculates monthly payment for mattress base
+     * payment based on 1(5%), 3(3%), or 5(2%) years
+     * userInput class we will pull price, amount of years, and any cash down
+     * method will return payment and display for user
+     * @param price
+     * @param years
+     * @param cashDown
+     * @return
+     */
     private double handleFinance(double price, double years, double cashDown) {
-    //this will calculate the monthly payment for the mattress base on price, cash down, and 
-    //years taken from user.
-}
+    
+    	
+    	
+    }
 }

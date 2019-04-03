@@ -1,5 +1,6 @@
 package cit260final;
- import java.util.ArrayList;
+import java.util.ArrayList;
+
 public class MattressMenu extends Menu {
    
     /**
@@ -17,7 +18,6 @@ public class MattressMenu extends Menu {
     protected String getTitle() {
         return "MATTRESS MENU";
     }
-    
     
     /**
      * Provide a menu description, or null to skip it.
