@@ -1,7 +1,7 @@
 package cit260final;
 
 public class MainMenu extends Menu {
-    private int years;
+    private double years;
     private double cashDown;
     
     /**
@@ -83,11 +83,11 @@ public class MainMenu extends Menu {
         
         return true;
     }
-    public int getYears() {
+    public double getYears() {
     	return years;
     }
     
-    public void setYears(int years) {
+    public void setYears(double years) {
     	this.years = years;
     }
     
@@ -98,7 +98,8 @@ public class MainMenu extends Menu {
     public void setCashDown(double cashDown) {
     	this.cashDown = cashDown;
     }
-    private double handleFinance(double price, int years, double cashDown)
+    private double handleFinance(double price, double years, double cashDown) {
     //this will calculate the monthly payment for the mattress base on price, cash down, and 
     //years taken from user.
+}
 }

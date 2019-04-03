@@ -1,5 +1,5 @@
 package cit260final;
-
+ import java.util.ArrayList;
 public class MattressMenu extends Menu {
    
     /**
@@ -37,25 +37,47 @@ public class MattressMenu extends Menu {
         return new MenuItem[] {
                 new MenuItem('1', "Top 25 Mattresses"),
                 new MenuItem('2', "Bed-in-a-Box options"),
-                new MenuItem('3', "Tratidional Mattress Options"),
+                new MenuItem('3', "Traditional Mattress Options"),
                 new MenuItem('R', "Return")
         };
     }
-    // filterByType() METHOD
+  
+    /**
+     * this will filter that data file by mattress type.
+     * @param database
+     * @param typeToFind
+     * @return
+     */
     public static ArrayList<Mattress> filterByType(ArrayList<Mattress> database, String typeToFind){
-    	//this will filter that data file by mattress type.
+    	
     
     }
     
-    //display allMattress()METHOD
+    /**
+     *   this will bring in the the top 25 mattress list for the user to view
+     * @param database
+     * @return
+     */
     public static String printMattressData(ArrayList<Mattress> database) {
-    //this will bring in the the top 25 mattress list for the user to view
+  
     }
+    /**
+     * displays all bed in a box mattresses
+     * @param database
+     * @param typeToFind
+     * @return
+     */
     public static String displayBedInABox(ArrayList<Mattress> database, String typeToFind) {
-    	//displays all bed in a box mattresses
+    	
     }
+    /**
+     * displays all traditional mattresses.
+     * @param database
+     * @param typeToFind
+     * @return
+     */
     public static String displayTraditional(ArrayList<Mattress> database, String typeToFind) {
-    	//displays all traditional mattresses.
+    	
     }
   
     /**

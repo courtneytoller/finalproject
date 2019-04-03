@@ -2,7 +2,7 @@ package cit260final;
 
 
 import java.util.Scanner;
-
+import java.util.ArrayList;
 public class MattressSearchMenu extends Menu {
     private double price;
     private String position;
@@ -70,6 +70,7 @@ public class MattressSearchMenu extends Menu {
     // reading in file for each mattress array
     public static ArrayList<Mattress> filterByPrice(ArrayList<Mattress> database, double price){
     	//takes in ArrayList and filters by price  of mattress that the user specifies.
+    	
     }
     public static ArrayList<Mattress> filterByPosition(ArrayList<Mattress> database, String position){
     	//takes in ArrayList and filters by position of mattress that the user specifies.
