@@ -43,44 +43,6 @@ public class MattressMenu extends Menu {
     }
   
     /**
-     * this will filter that data file by mattress type.
-     * @param database
-     * @param typeToFind
-     * @return
-     */
-    public static ArrayList<Mattress> filterByType(ArrayList<Mattress> database, String typeToFind){
-    	
-    
-    }
-    
-    /**
-     *   this will bring in the the top 25 mattress list for the user to view
-     * @param database
-     * @return
-     */
-    public static String printMattressData(ArrayList<Mattress> database) {
-  
-    }
-    /**
-     * displays all bed in a box mattresses
-     * @param database
-     * @param typeToFind
-     * @return
-     */
-    public static String displayBedInABox(ArrayList<Mattress> database, String typeToFind) {
-    	
-    }
-    /**
-     * displays all traditional mattresses.
-     * @param database
-     * @param typeToFind
-     * @return
-     */
-    public static String displayTraditional(ArrayList<Mattress> database, String typeToFind) {
-    	
-    }
-  
-    /**
      * Handle the user's menu selection.
      * @param key
      * @return false if the menu should exit and return to whatever called it.
@@ -89,14 +51,15 @@ public class MattressMenu extends Menu {
     protected boolean handleMenuSelection(char key) {
         
         switch (Character.toUpperCase(key)) {
-            case '1': 
-                System.out.println("Top 25 Mattresses");//display all mattresses add in loop to search through text file
+            case '1':
+                //printMattress();
                 break;
             case '2':
-                System.out.println("Help Text 2");//display BIAB add in loop to search through text file
+                //printBiab();
+               
                 break;
             case '3':
-                System.out.println("Help Text 3");// display traditional add in loop to search through text file
+                //printTraditoinal();
                 break;
                 
             case 'R':
@@ -110,4 +73,33 @@ public class MattressMenu extends Menu {
         return true;
     }
 
+
+    /**
+     *   this will bring in the the top 25 mattress list for the user to view
+     * @param database
+     * @return
+     */
+/*    public static String printMattressData(ArrayList<Mattress> database) {
+  
+    }*/
+  
+    /**
+     * displays all bed in a box mattresses
+     * @param database
+     * @param typeToFind
+     * @return
+     */
+/*    public static String displayBedInABox(ArrayList<Mattress> database, String typeToFind) {
+    	
+    }*/
+
+    /**
+     * displays all traditional mattresses.
+     * @param database
+     * @param typeToFind
+     * @return
+     */
+   /* public static String displayTraditional(ArrayList<Mattress> database, String typeToFind) {
+    	
+    }*/
 }

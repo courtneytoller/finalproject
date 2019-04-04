@@ -4,53 +4,7 @@ import java.util.ArrayList;
 
 public class MattressSearchMenu extends Menu {
     
-	private double price;
-    private String position;
-    private String size;
-    private int firmness;
-    
-    /**
-     * Default constructor. Does nothing.
-     */
-    public MattressSearchMenu() {
-        super();
-    }
-    
-    /**
-     * getters and setters price, position, size, firmness
-     * @return
-     */
-    public double getPrice() {
-    	return price;
-    }
-    
-    public void setPrice(double price) {
-    	this.price = price;
-    }
-    
-    public String getPosition() {
-    	return position;
-    }
-    
-    public void setPosition(String position) {
-    	this.position = position;
-    }
-    
-    public String getSize() {
-    	return size;
-    } 
-    
-    public void setSize(String size) {
-    	this.size = size;
-    }
-    
-    public int getFirmness() {
-    	return firmness;
-    }
-    
-    public void setFirmness(int firmness) {
-    	this.firmness = firmness;
-    }
+	
     private ArrayList<Mattress> readMattress(){
     /*	ArrayList<Mattress> mattress= new ArrayList<>();
     	  try (Scanner scanner = new Scanner(new File ("./mattress.txt"))) {

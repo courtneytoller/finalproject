@@ -86,11 +86,15 @@ public class MainMenu extends Menu {
      * @return
      */
     private double calculateFinance(double price, int years, double cashDown) {
-    	
+    	//do finance calculations copy and paste from previous assignment loan payment :)
        	return 0;
     	
     }
-    
+    /**
+     * handleFinance will prompt user for amount of the bed. 
+     * user will enter 1, 3, or 5 years to finance and amount of
+     * cash down. Return result of calculate finance.
+     */
     private void handleFinance() {
     	int years = 0;
         double cashDown = 0;
