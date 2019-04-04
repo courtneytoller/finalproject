@@ -1,8 +1,6 @@
 package cit260final;
 
 public class MainMenu extends Menu {
-    private double years;
-    private double cashDown;
     
     /**
      * Default constructor. Does nothing.
@@ -62,7 +60,7 @@ public class MainMenu extends Menu {
                 mattressSearchMenu.display();
                 break;
             case 'F':
-                // financial menu or method;
+                handleFinance();
                 break;
                 
             case 'Q':
@@ -76,27 +74,9 @@ public class MainMenu extends Menu {
         return true;
     }
     
+ 
     /**
-     * getters and setters for years, cashDown
-     * @return
-     */
-    public double getYears() {
-    	return years;
-    }
-    
-    public void setYears(double years) {
-    	this.years = years;
-    }
-    
-    public double getCashDown() {
-    	return cashDown;
-    }
-    
-    public void setCashDown(double cashDown) {
-    	this.cashDown = cashDown;
-    }
-    /**
-     * handleFinance calculates monthly payment for mattress base
+     * calculateFinance calculates monthly payment for mattress base
      * payment based on 1(5%), 3(3%), or 5(2%) years
      * userInput class we will pull price, amount of years, and any cash down
      * method will return payment and display for user
@@ -105,9 +85,17 @@ public class MainMenu extends Menu {
      * @param cashDown
      * @return
      */
-    private double handleFinance(double price, double years, double cashDown) {
+    private double calculateFinance(double price, int years, double cashDown) {
+    	
+       	return 0;
+    	
+    }
     
-    	
-    	
+    private void handleFinance() {
+    	int years = 0;
+        double cashDown = 0;
+        double price= 0;
+        
+        double result = calculateFinance(price, years, cashDown);
     }
 }

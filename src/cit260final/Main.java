@@ -2,10 +2,12 @@ package cit260final;
 
 import java.util.Scanner;
 
-public class UserInput {
+public class Main {
 
 	public static void main(String[] args) {
-		try (Scanner input = new Scanner(System.in)){
+		
+		Menu menu = new MainMenu();
+		menu.display();
 			//Prompt user for price
 			
 			//Prompt for size(petite, average, tall)
@@ -22,4 +24,4 @@ public class UserInput {
 		}
 	}
 
-}
+
