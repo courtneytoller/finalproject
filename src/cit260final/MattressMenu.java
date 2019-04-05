@@ -38,6 +38,7 @@ public class MattressMenu extends Menu {
                 new MenuItem('1', "Top 25 Mattresses"),
                 new MenuItem('2', "Bed-in-a-Box options"),
                 new MenuItem('3', "Traditional Mattress Options"),
+                new MenuItem('4', "Take the Quiz"),
                 new MenuItem('R', "Return")
         };
     }
@@ -59,9 +60,10 @@ public class MattressMenu extends Menu {
                
                 break;
             case '3':
-                //printTraditoinal();
+                //printTraditional();
                 break;
-                
+            case '4':Menu mattressSearchMenu = new MattressSearchMenu();
+                mattressSearchMenu.display();
             case 'R':
                 return false;// return back to main menu 
                 
@@ -79,7 +81,7 @@ public class MattressMenu extends Menu {
      * @param database
      * @return
      */
-/*    public static String printMattressData(ArrayList<Mattress> database) {
+/*    public static String printMattress(ArrayList<Mattress> database) {
   
     }*/
   
@@ -89,7 +91,7 @@ public class MattressMenu extends Menu {
      * @param typeToFind
      * @return
      */
-/*    public static String displayBedInABox(ArrayList<Mattress> database, String typeToFind) {
+/*    public static String printBiab(ArrayList<Mattress> database, String typeToFind) {
     	
     }*/
 
@@ -99,7 +101,7 @@ public class MattressMenu extends Menu {
      * @param typeToFind
      * @return
      */
-   /* public static String displayTraditional(ArrayList<Mattress> database, String typeToFind) {
+   /* public static String printTraditional(ArrayList<Mattress> database, String typeToFind) {
     	
     }*/
 }

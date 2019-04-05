@@ -2,6 +2,8 @@ package cit260final;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.regex.Pattern;
+
 import cit260final.Mattress;
 import java.io.*;
 //methods for get type for bed in a box and traditional
@@ -34,24 +36,8 @@ public class MattressDatabase {
             File textFile = new File(FILEPATH);
             
             try (PrintWriter out = new PrintWriter(new FileOutputStream(textFile))) {
-                
-                
-                for (Mattress mattress : bed) {
-                    out.printf("Type: %s%n", mattress.getClass().getSimpleName());
-                    
-                    if (mattress instanceof WingedAnimal) {
-                        out.printf("Name: %s%n", mattress.getName());
-                   
-                        
-                    } else if (mattress instanceof Dog) {
-                        Dog dog = (Dog)mattress;
-                        out.printf("Name: %s%n", mattress.getName());
-                        out.printf("FavoriteToy: %s%n", dog.getFavoriteToy());
-                        
-                    }
-                }
-               
-            
+            	// store mattress data to be used for other methods in program.
+            	
             } catch (FileNotFoundException exception) {
                 System.err.println("Could not find file path");
                 
@@ -60,48 +46,18 @@ public class MattressDatabase {
         }
 
         /**
-         * Load a bed.
+         * Load the bed file back into the program. 
          * @return
          */
         public static void loadBed() {
             
             File textFile = new File(FILEPATH);
-            zoo = new ArrayList<>();
+            bed = new ArrayList<>();
             
             try (Scanner scanner = new Scanner(textFile)) {
+                //load mattress data from the file 
+                scanner.useDelimiter(Pattern.compile(","));
                 
-                scanner.useDelimiter(Pattern.compile("[:\\n]"));
-                
-                while (scanner.hasNext()) {
-                    String key = scanner.next();
-                    String value = scanner.next().trim();
-                    
-                    Animal animal = null;
-                    
-                    if (key.equals("Type")) {
-                        
-                        switch(value) {
-                            case "Dog":
-                                animal = readDog(scanner);
-                                break;
-                            case "Bat":
-                                animal = readBat(scanner);
-                                break;
-                            case "Canary":
-                                animal = readCanary(scanner);
-                                break;
-                            case "Ostrich":
-                                animal = readOstrich(scanner);
-                                break;
-                            default:
-                                break;
-                        }
-                    }
-                    
-                    if (animal != null) {
-                        zoo.add(animal);
-                    }
-                }
             } catch (FileNotFoundException exception) {
                 System.err.println("Could not find file path");
                 
@@ -111,4 +67,4 @@ public class MattressDatabase {
         
 	}
 	
-}
+
