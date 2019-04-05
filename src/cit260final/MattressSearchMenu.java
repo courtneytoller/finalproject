@@ -3,53 +3,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class MattressSearchMenu extends Menu {
-    
-	
-    private ArrayList<Mattress> readMattress(){
-    /*	ArrayList<Mattress> mattress= new ArrayList<>();
-    	  try (Scanner scanner = new Scanner(new File ("./mattress.txt"))) {
-              
-              while (scanner.hasNextLine()) {
-                  String line = scanner.nextLine();
-                  String[] fields = line.split(",");
-          
-                  try {
-                  Mattress newMattress = new Mattress();
-                  mattress.setBrand(fields[0]);
-                  mattress.setRank(Integer.parseInt(fields[1]));
-                  } catch (NumberFormatException ex) {
-                      continue;
-                  }
-                  //...
-                  
-                  mattress.add(mattress);
-              }
-          }*/
-    }
-    
-    // reading in file for each mattress array
-    public static ArrayList<Mattress> filterByPrice(ArrayList<Mattress> database, double price){
-    	//takes in ArrayList and filters by price  of mattress that the user specifies.
-    	
-    }
-    public static ArrayList<Mattress> filterByPosition(ArrayList<Mattress> database, String position){
-    	//takes in ArrayList and filters by position of mattress that the user specifies.
-    }
-    public static ArrayList<Mattress> filterBySize(ArrayList<Mattress> database, String size){
-    	//takes in ArrayList and filters by size of mattress that the user specifies.
-    }
-    public static ArrayList<Mattress> filterByFirmness(ArrayList<Mattress> database, int firmness){
-    	//takes in ArrayList and filters by firmness of mattress that the user specifies.
-    }
    
-    public static String printMattressData(ArrayList<Mattress> database) {
-        //this will return found mattresses and bring in the three recommended mattresses. this will print
-    	//to file so user can have record of results.
-        }
-    
-    public String testResults() {
-    	//Take the filtered results and hold the top 3 for display to the user
-    }
     /**
      * Provide the menu title (or null to skip it)
      * @return
@@ -97,10 +51,10 @@ public class MattressSearchMenu extends Menu {
                 System.out.println("Top 25 Mattresses");//display all mattresses add in loop to search through text file
                 break;
             case '2':
-                System.out.println("Help Text 2");//display BIAB add in loop to search through text file
+                System.out.println("Bed In A Box");//display BIAB add in loop to search through text file
                 break;
             case '3':
-                System.out.println("Help Text 3");// display traditional add in loop to search through text file
+                System.out.println("Traditional");// display traditional add in loop to search through text file
                 break;
                 
             case 'R':
@@ -113,5 +67,63 @@ public class MattressSearchMenu extends Menu {
         
         return true;
     }
-
+    
+   	//Prompt user for price
+   	
+   	//Prompt for size(petite, average, tall)
+   	//Prompt for position(back or side)
+   	//Prompt for firmness from 1-5
+   	//Ask user if they would like to finance
+   	//User puts in price of bed they want to finance
+   	//User selects number of years to finance
+   	//Option to print list of 25 mattresses
+   	
+   	//Output top 3 mattresses
+   	//Output monthly payment for bed price
+   	
+       private ArrayList<Mattress> readMattress(){
+       /*	ArrayList<Mattress> mattress= new ArrayList<>();
+       	  try (Scanner scanner = new Scanner(new File ("./mattress.txt"))) {
+                 
+                 while (scanner.hasNextLine()) {
+                     String line = scanner.nextLine();
+                     String[] fields = line.split(",");
+             
+                     try {
+                     Mattress newMattress = new Mattress();
+                     mattress.setBrand(fields[0]);
+                     mattress.setRank(Integer.parseInt(fields[1]));
+                     } catch (NumberFormatException ex) {
+                         continue;
+                     }
+                     //...
+                     
+                     mattress.add(mattress);
+                 }
+             }*/
+       }
+       
+       // reading in file for each mattress array
+       public static ArrayList<Mattress> filterByPrice(ArrayList<Mattress> database, double price){
+       	//takes in ArrayList and filters by price  of mattress that the user specifies.
+       	
+       }
+       public static ArrayList<Mattress> filterByPosition(ArrayList<Mattress> database, String position){
+       	//takes in ArrayList and filters by position of mattress that the user specifies.
+       }
+       public static ArrayList<Mattress> filterBySize(ArrayList<Mattress> database, String size){
+       	//takes in ArrayList and filters by size of mattress that the user specifies.
+       }
+       public static ArrayList<Mattress> filterByFirmness(ArrayList<Mattress> database, int firmness){
+       	//takes in ArrayList and filters by firmness of mattress that the user specifies.
+       }
+      
+       public static String printMattressData(ArrayList<Mattress> database) {
+           //this will return found mattresses and bring in the three recommended mattresses. this will print
+       	//to file so user can have record of results.
+           }
+       
+       public String testResults() {
+       	//Take the filtered results and hold the top 3 for display to the user
+       }
 }
