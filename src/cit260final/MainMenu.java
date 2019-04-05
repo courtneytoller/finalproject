@@ -1,4 +1,5 @@
 package cit260final;
+import java.util.Scanner;
 
 public class MainMenu extends Menu {
     
@@ -80,26 +81,58 @@ public class MainMenu extends Menu {
      * payment based on 1(5%), 3(3%), or 5(2%) years
      * userInput class we will pull price, amount of years, and any cash down
      * method will return payment and display for user
+     * calculation code adapted from CodeAcademy;
      * @param price
      * @param years
      * @param cashDown
      * @return
      */
-    private double calculateFinance(double price, int years, double cashDown) {
+    private static double calculateFinance(double price, int years, double cashDown) {
     	//do finance calculations copy and paste from previous assignment loan payment :)
-       	return 0;
+    	double interestRate=0;
+    	double remainingBalance= price - cashDown;
+    	int months= years * 12;
+    	double monthlyBalance= remainingBalance / months;
+    	double monthlyPayment= monthlyBalance + interestRate;
     	
-    }
-    /**
+    	if(years ==1) {
+    		interestRate=.05;
+    	}
+    	else if(years==3) {
+    		interestRate=.03;
+    	}else if(years == 5) {
+    		interestRate=.01;
+    		
+    	}else {
+    		System.out.print("Please enter 1, 3, 5 years.");
+    	}
+
+    return monthlyPayment;
+}
+   /**
      * handleFinance will prompt user for amount of the bed. 
      * user will enter 1, 3, or 5 years to finance and amount of
      * cash down. Return result of calculate finance.
      */
     private void handleFinance() {
-    	int years = 0;
-        double cashDown = 0;
-        double price= 0;
+    
+        try(Scanner input= new Scanner(System.in)){
+        System.out.print("Please Enter Mattress Price:");
         
+        double price = input.nextDouble();
+        
+        System.out.print("Would you like to finance for 1, 3 or 5 years?");
+        int years = input.nextInt();
+        
+        //for loop to check for valid input 1, 3, 5
+        System.out.print("How much money would you like to put down?");
+        double cashDown = input.nextDouble();
+        
+        // mismatch handling here.
         double result = calculateFinance(price, years, cashDown);
+        System.out.print("Your Monthly Payment is: " + result);
+        }
+        
     }
+        
 }
