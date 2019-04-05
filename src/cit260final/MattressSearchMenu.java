@@ -69,9 +69,6 @@ public class MattressSearchMenu extends Menu {
     }
     
    	//Prompt user for price
-   	
-   	//Prompt for size(petite, average, tall)
-   	//Prompt for position(back or side)
    	//Prompt for firmness from 1-5
    	//Ask user if they would like to finance
    	//User puts in price of bed they want to finance
@@ -80,45 +77,20 @@ public class MattressSearchMenu extends Menu {
    	
    	//Output top 3 mattresses
    	//Output monthly payment for bed price
-   	
-       private ArrayList<Mattress> readMattress(){
-       /*	ArrayList<Mattress> mattress= new ArrayList<>();
-       	  try (Scanner scanner = new Scanner(new File ("./mattress.txt"))) {
-                 
-                 while (scanner.hasNextLine()) {
-                     String line = scanner.nextLine();
-                     String[] fields = line.split(",");
-             
-                     try {
-                     Mattress newMattress = new Mattress();
-                     mattress.setBrand(fields[0]);
-                     mattress.setRank(Integer.parseInt(fields[1]));
-                     } catch (NumberFormatException ex) {
-                         continue;
-                     }
-                     //...
-                     
-                     mattress.add(mattress);
-                 }
-             }*/
-       }
-       
+
+
+    
        // reading in file for each mattress array
-       public static ArrayList<Mattress> filterByPrice(ArrayList<Mattress> database, double price){
+       public static ArrayList<Mattress> filterByPrice(ArrayList<Mattress> bed, double price){
        	//takes in ArrayList and filters by price  of mattress that the user specifies.
-       	
+       	return 0;
        }
-       public static ArrayList<Mattress> filterByPosition(ArrayList<Mattress> database, String position){
-       	//takes in ArrayList and filters by position of mattress that the user specifies.
-       }
-       public static ArrayList<Mattress> filterBySize(ArrayList<Mattress> database, String size){
-       	//takes in ArrayList and filters by size of mattress that the user specifies.
-       }
-       public static ArrayList<Mattress> filterByFirmness(ArrayList<Mattress> database, int firmness){
+  
+       public static ArrayList<Mattress> filterByFirmness(ArrayList<Mattress> bed, int firmness){
        	//takes in ArrayList and filters by firmness of mattress that the user specifies.
        }
       
-       public static String printMattressData(ArrayList<Mattress> database) {
+       public static String printMattressData(ArrayList<Mattress> bed) {
            //this will return found mattresses and bring in the three recommended mattresses. this will print
        	//to file so user can have record of results.
            }
