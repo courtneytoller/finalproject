@@ -89,25 +89,25 @@ public class MainMenu extends Menu {
      */
     private static double calculateFinance(double price, int years, double cashDown) {
     	//do finance calculations copy and paste from previous assignment loan payment :)
-    	double interestRate=0;
-    	double remainingBalance= price - cashDown;
-    	int months= years * 12;
-    	double monthlyBalance= remainingBalance / months;
-    	double monthlyPayment= monthlyBalance + interestRate;
-    	
-    	if(years ==1) {
-    		interestRate=.05;
+    	double interestRate = 0;
+    	double remainingBalance = price - cashDown;
+    	int months = years * 12;
+    	    	
+    	if(years == 1) {
+    		interestRate = .05;
     	}
-    	else if(years==3) {
+    	else if(years == 3) {
     		interestRate=.03;
     	}else if(years == 5) {
-    		interestRate=.01;
+    		interestRate = .01;
     		
     	}else {
     		System.out.print("Please enter 1, 3, 5 years.");
     	}
 
-    return monthlyPayment;
+    	double monthlyPayment = ((interestRate/12) * remainingBalance)/(1-Math.pow((1+ (interestRate/12)),- months));
+    	
+    	return monthlyPayment;
 }
    /**
      * handleFinance will prompt user for amount of the bed. 
