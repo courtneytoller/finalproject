@@ -70,7 +70,7 @@ public class MattressSearchMenu extends Menu {
 			System.err.println("Please enter price options of 1, 2, or 3 only");
 			System.out.println("");
 			System.out.println("Please re-enterprice options: ");
-			price = input.nextInt();
+			price = input.nextDouble();
 			
 
 		}	
@@ -82,13 +82,22 @@ public class MattressSearchMenu extends Menu {
 			System.out.println("");
 			System.out.println("Please re-enter firmness preference options: ");
 			firmness = input.nextInt();
+		}	
+    	//prompt for position back or side
+    	System.out.print("What is your preferred sleeping position? 1=Back, 2=Side");
+    	int position= input.nextInt();
+    	while (position != 1 && position != 2) {
+			System.err.println("Please enter postition option of 1 or 2 only");
+			System.out.println("");
+			System.out.println("Please re-enter position preference: ");
+			position= input.nextInt();
 			
 
 		}	
     	Mattress mattress = new Mattress(price, firmness, position);
     	
        	
-    	//prompt for position back or side
+    
        	//Option to print list of 25 mattresses
        	//Output top 3 mattresses String
 //exception handling

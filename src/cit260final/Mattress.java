@@ -8,7 +8,7 @@ public class Mattress {
 	private String durability;
 	private int stabilization;
     private int firmness;
-    private String position;
+    private int position;
     private String type;
     /**
      * Default constructor. Does nothing.
@@ -17,7 +17,7 @@ public class Mattress {
        
     }
     
-    public Mattress(double price, int firmness, String position) {
+    public Mattress(double price, int firmness, int position) {
     	this.price= price;
     	this.firmness= firmness;
     	this.position= position;
