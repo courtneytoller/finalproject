@@ -17,6 +17,11 @@ public class Mattress {
        
     }
     
+    public Mattress(double price, int firmness, String position) {
+    	this.price= price;
+    	this.firmness= firmness;
+    	this.position= position;
+    }
     /**
      * getters and setters rank, Brand, rating,
      *  price, durability, stabilization, firmness,

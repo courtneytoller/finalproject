@@ -1,6 +1,7 @@
 package cit260final;
 
 import java.util.InputMismatchException;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class MainMenu extends Menu {
@@ -127,7 +128,7 @@ public class MainMenu extends Menu {
 			// check for negative number
 			while (price < 0) {
 				System.err.println("Only positive number, please.");
-				System.out.println();
+				System.out.println("");
 				System.out.println("Please re-enter price: ");
 				price = input.nextDouble();
 			}
@@ -138,7 +139,7 @@ public class MainMenu extends Menu {
 			// exception for only 1,3,5
 			while (years != 1 && years != 3 && years != 5) {
 				System.err.println("Please enter only 1, 3, or 5 years.");
-				System.out.println();
+				System.out.println("");
 				System.out.println("Please re-enter years: ");
 				years = input.nextInt();
 
@@ -149,13 +150,15 @@ public class MainMenu extends Menu {
 			double cashDown = input.nextDouble();
 			while (cashDown < 0) {
 				System.err.println("Only positive number, please.");
-				System.out.println();
+				System.out.println("");
 				System.out.println("Please re-enter price:\n");
 				cashDown = input.nextDouble();
 			}
 			// mismatch handling here.
 			double result = calculateFinance(price, years, cashDown);
 			System.out.printf("Your Monthly Payment is: $%.2f\n", result);
+		//look at catch again see what exception we need
+			//figure out no such element exception
 		} catch (InputMismatchException ex) {
 			System.out.println("Input not accepted, enter an integer: ");
 			input.nextLine();
