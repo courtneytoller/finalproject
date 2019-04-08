@@ -1,7 +1,6 @@
 package cit260final;
 
 import java.util.InputMismatchException;
-import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class MainMenu extends Menu {
@@ -123,9 +122,9 @@ public class MainMenu extends Menu {
 		Scanner input = new Scanner(System.in);
 
 		try {
-
-			System.out.print("Please Enter Mattress Price:");
-
+			//prompt, trying to figure it out...
+//			System.out.print("Please Enter Mattress Price:");
+			//String prompt= prompt("Please Enter Mattress Price:");
 			double price = input.nextDouble();
 			// check for negative number
 			while (price < 0) {

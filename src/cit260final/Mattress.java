@@ -8,7 +8,7 @@ public class Mattress {
 	private String durability;
 	private int stabilization;
     private int firmness;
-    private int position;
+    private String position;
     private String type;
     /**
      * Default constructor. Does nothing.
@@ -17,7 +17,7 @@ public class Mattress {
        
     }
     
-    public Mattress(double price, int firmness, int position) {
+    public Mattress(double price, int firmness, String position) {
     	this.price= price;
     	this.firmness= firmness;
     	this.position= position;
@@ -76,11 +76,11 @@ public class Mattress {
     public void setFirmness(int firmness) {
     	this.firmness = firmness;
     }
-    public int getPosition() {
+    public String getPosition() {
     	return position;
     }
     
-    public void setPosition(int position) {
+    public void setPosition(String position) {
     	this.position = position;
     }
     public String getType() {

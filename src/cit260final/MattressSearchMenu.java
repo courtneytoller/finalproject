@@ -84,15 +84,15 @@ public class MattressSearchMenu extends Menu {
 			firmness = input.nextInt();
 		}	
     	//prompt for position back or side
+    	//IS THIS GOING TO WORK WITH THE STRING TO INT CONVERSION?
     	System.out.print("What is your preferred sleeping position? 1=Back, 2=Side");
-    	int position= input.nextInt();
-    	while (position != 1 && position != 2) {
+    	String position= input.next();
+    	int posit= Integer.parseInt(position);
+    	while (posit != 1 && posit != 2) {
 			System.err.println("Please enter postition option of 1 or 2 only");
 			System.out.println("");
 			System.out.println("Please re-enter position preference: ");
-			position= input.nextInt();
-			
-
+			posit= input.nextInt();
 		}	
     	Mattress mattress = new Mattress(price, firmness, position);
     	
