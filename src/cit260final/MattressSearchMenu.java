@@ -62,6 +62,7 @@ public class MattressSearchMenu extends Menu {
     
     private void handleQuizOptions() {
     	//Prompt user for price
+    	
        	//Prompt for firmness from 1-5
     	//prompt for position
        	//Option to print list of 25 mattresses
