@@ -76,11 +76,11 @@ public class Mattress {
     public void setFirmness(int firmness) {
     	this.firmness = firmness;
     }
-    public String getPosition() {
+    public int getPosition() {
     	return position;
     }
     
-    public void setPosition(String position) {
+    public void setPosition(int position) {
     	this.position = position;
     }
     public String getType() {

@@ -40,7 +40,9 @@ public class MainMenu extends Menu {
 	 */
 	@Override
 	protected MenuItem[] getMenuItems() {
-		return new MenuItem[] { new MenuItem('1', "Mattress Menu"), new MenuItem('2', "Find the Best Mattress for You"),
+		return new MenuItem[] { 
+				new MenuItem('1', "Mattress Menu"),
+				new MenuItem('2', "Find the Best Mattress for You"),
 				new MenuItem('F', "Financial"), new MenuItem('Q', "Quit Program") };
 	}
 
