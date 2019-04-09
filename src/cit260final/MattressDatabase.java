@@ -52,19 +52,40 @@ public class MattressDatabase {
         public static void loadBed() {
             
             File textFile = new File(FILEPATH);
-            bed = new ArrayList<>();
+            ArrayList<Mattress> bed = new ArrayList<Mattress>();
             
             try (Scanner scanner = new Scanner(textFile)) {
                 //load mattress data from the file 
-                scanner.useDelimiter(Pattern.compile(","));
+             while(scanner.hasNextLine()) {
+            	 String line = scanner.nextLine();
+            	// String[] fields=line.split(",");
+            	 
+            	 try {
+            	 Mattress newMattress = new Mattress();
+            	 newMattress.setType(line);
+            	 
+            	 System.out.println(newMattress.getType());
+            	 
+            	 
+            	 }
+            	 catch (NumberFormatException ex) {
+            		 continue;
+            	 }
+            	 
+        /*    	 try {
+            		 Mattress newMattress= new Mattress();
+            		
+             }*/
+             }
                 
             } catch (FileNotFoundException exception) {
                 System.err.println("Could not find file path");
                 
-            } 
+            }
             
         }
         
 	}
 	
+        
 

@@ -17,10 +17,11 @@ public class Mattress {
        
     }
     
-    public Mattress(double price, int firmness, String position) {
+    public Mattress(double price, int firmness, String position, String type) {
     	this.price= price;
     	this.firmness= firmness;
     	this.position= position;
+    	this.type = type;
     }
     /**
      * getters and setters rank, Brand, rating,

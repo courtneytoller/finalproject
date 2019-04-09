@@ -53,7 +53,7 @@ public class MattressMenu extends Menu {
         
         switch (Character.toUpperCase(key)) {
             case '1':
-                //printMattress();
+                printMattress();
                 break;
             case '2':
                 //printBiab();
@@ -81,9 +81,11 @@ public class MattressMenu extends Menu {
      * @param database
      * @return
      */
-/*    public static String printMattress(ArrayList<Mattress> database) {
-  
-    }*/
+    public static ArrayList <Mattress> printMattress() {
+    	
+    		return MattressDatabase.getBed();
+    	
+    }
   
     /**
      * displays all bed in a box mattresses
@@ -91,9 +93,17 @@ public class MattressMenu extends Menu {
      * @param typeToFind
      * @return
      */
-/*    public static String printBiab(ArrayList<Mattress> database, String typeToFind) {
-    	
-    }*/
+   public static ArrayList<Mattress> printBiab(ArrayList<Mattress> bed, String typeToFind) {
+	   ArrayList<Mattress> foundMattress = new ArrayList<>();
+    			for(Mattress m: bed) {
+    				if (m.getType().contentEquals(typeToFind)) {
+    					foundMattress.add(m);
+    				}
+    				
+    			}
+    			return foundMattress;
+    }
+   
 
     /**
      * displays all traditional mattresses.
@@ -101,7 +111,7 @@ public class MattressMenu extends Menu {
      * @param typeToFind
      * @return
      */
-   /* public static String printTraditional(ArrayList<Mattress> database, String typeToFind) {
+   /* public static String printTraditional(ArrayList<Mattress> bed, String typeToFind) {
     	
     }*/
 }

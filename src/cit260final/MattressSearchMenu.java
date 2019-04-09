@@ -94,7 +94,7 @@ public class MattressSearchMenu extends Menu {
 			System.out.println("Please re-enter position preference: ");
 			posit= input.nextInt();
 		}	
-    	Mattress mattress = new Mattress(price, firmness, position);
+    	//Mattress mattress = new Mattress(price, firmness, position);
     	
        	
     

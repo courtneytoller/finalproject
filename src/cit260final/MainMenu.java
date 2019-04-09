@@ -123,7 +123,7 @@ public class MainMenu extends Menu {
 
 		try {
 			//prompt, trying to figure it out...
-//			System.out.print("Please Enter Mattress Price:");
+System.out.print("Please Enter Mattress Price:");
 			//String prompt= prompt("Please Enter Mattress Price:");
 			double price = input.nextDouble();
 			// check for negative number
