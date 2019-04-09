@@ -53,6 +53,7 @@ public class MattressDatabase {
             
             File textFile = new File(FILEPATH);
             ArrayList<Mattress> bed = new ArrayList<Mattress>();
+            boolean traditionalList = true;
             
             try (Scanner scanner = new Scanner(textFile)) {
                 //load mattress data from the file 
@@ -66,7 +67,10 @@ public class MattressDatabase {
             	 
             	 System.out.println(newMattress.getType());
             	 
+            	 if(traditionalList == true);
+            	 System.out.println(line.contains("Traditional"));
             	 
+            	            	 
             	 }
             	 catch (NumberFormatException ex) {
             		 continue;
