@@ -67,10 +67,10 @@ public class MattressDatabase {
             	 
             	 System.out.println(newMattress.getType());
             	 
-            	 if(traditionalList == true);
-            	 System.out.println(line.contains("Traditional"));
-            	 
-            	            	 
+            	if(line.contains("Traditional") && traditionalList == true)
+            	System.out.println(traditionalList);
+            	            
+            	
             	 }
             	 catch (NumberFormatException ex) {
             		 continue;
