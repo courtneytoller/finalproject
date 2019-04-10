@@ -53,14 +53,14 @@ public class MattressMenu extends Menu {
         
         switch (Character.toUpperCase(key)) {
             case '1':
-                printMattress();
+                printMattress("All");
                 break;
             case '2':
-                //printBiab();
+                printMattress("BedInBox");
                
                 break;
             case '3':
-                //printTraditional();
+                printMattress("TraditionalMattress");
                 break;
             case '4':Menu mattressSearchMenu = new MattressSearchMenu();
                 mattressSearchMenu.display();
@@ -81,9 +81,9 @@ public class MattressMenu extends Menu {
      * @param database
      * @return
      */
-    public static ArrayList <Mattress> printMattress() {
+    public static ArrayList <Mattress> printMattress(String mattressType) {
     	
-    		return MattressDatabase.getBed();
+    		return MattressDatabase.getBed(mattressType);
     	
     }
   

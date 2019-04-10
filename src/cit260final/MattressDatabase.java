@@ -17,10 +17,10 @@ public class MattressDatabase {
          * Return the bed database array, loading it from a file, if necessary.
          * @return
          */
-        synchronized public static ArrayList<Mattress> getBed() {
+        synchronized public static ArrayList<Mattress> getBed(String mattressType) {
             
             if (bed == null) {
-                loadBed();
+                loadBed(mattressType);
             }
             
             return bed;
@@ -49,7 +49,7 @@ public class MattressDatabase {
          * Load the bed file back into the program. 
          * @return
          */
-        public static void loadBed() {
+        public static void loadBed(String mattressType) {
             
             File textFile = new File(FILEPATH);
             ArrayList<Mattress> bed = new ArrayList<Mattress>();
@@ -65,12 +65,19 @@ public class MattressDatabase {
             	 Mattress newMattress = new Mattress();
             	 newMattress.setType(line);
             	 
+            	 if (mattressType == "All") {
             	 System.out.println(newMattress.getType());
+            	 }
             	 
-            	if(line.contains("Traditional") && traditionalList == true)
-            	System.out.println(traditionalList);
-            	            
-            	
+            	 else if (mattressType == "TraditionalMattress") {             		 
+            		 if(line.contains("Traditional") && traditionalList == true)
+            		 System.out.println(newMattress.getType());     
+            	 }
+            	 	
+            	 else if(mattressType == "BedInBox") {            		 
+            		 if(line.contains("Bed-In-A-Box") && traditionalList == true)
+            		 System.out.println(newMattress.getType());
+            	 	}
             	 }
             	 catch (NumberFormatException ex) {
             		 continue;
