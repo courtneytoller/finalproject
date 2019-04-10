@@ -4,6 +4,12 @@ import java.util.ArrayList;
 
 public abstract class BedQuizData {
 	
+	//if statements for price points for user input
+	ArrayList<Mattress> bed = new ArrayList<Mattress>();
+	//new object for Mattress that calls user input
+	//pass user input into each method to test
+	//filter through mattresses
+	
 	public BedQuizData() {
 		
 	}

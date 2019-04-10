@@ -52,7 +52,6 @@ public class MattressDatabase {
         public static void loadBed(String mattressType) {
             
             File textFile = new File(FILEPATH);
-            ArrayList<Mattress> bed = new ArrayList<Mattress>();
             boolean traditionalList = true;
             
             try (Scanner scanner = new Scanner(textFile)) {
@@ -83,11 +82,7 @@ public class MattressDatabase {
             		 continue;
             	 }
             	 
-        /*    	 try {
-            		 Mattress newMattress= new Mattress();
-            		
-             }*/
-             }
+               }
                 
             } catch (FileNotFoundException exception) {
                 System.err.println("Could not find file path");

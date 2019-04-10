@@ -7,6 +7,9 @@ public class Main {
 		Menu menu = new MainMenu();
 		menu.display();
 		
+		System.out.println();
+		System.out.println("Thank you for visiting!");
+		
 		}
 	}
 
