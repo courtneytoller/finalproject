@@ -120,7 +120,7 @@ public class MainMenu extends Menu {
 	 */
 	private void handleFinance() {
 		Scanner input = new Scanner(System.in);
-
+		
 		try {
 			// prompt, trying to figure it out...
 			System.out.print("Please Enter Mattress Price:");
@@ -163,11 +163,12 @@ public class MainMenu extends Menu {
 		} catch (InputMismatchException ex) {
 			System.err.println("Input not accepted, enter numbers only: ");
 			input.nextLine();
-			input.close();
+			
 		}
 
-	}
+	
 	// store user input
 	// output the user enters for user as summary.
 	// print finance results for user including payment per month.
+	}
 }

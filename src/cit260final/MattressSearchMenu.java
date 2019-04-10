@@ -50,6 +50,7 @@ public class MattressSearchMenu extends Menu {
             case '1':handleQuizOptions();
             case '2':Menu mattressMenu = new MattressMenu();
             mattressMenu.display();
+            case 'R':
                 return false;// return back to main menu 
                 
             default:
@@ -62,34 +63,44 @@ public class MattressSearchMenu extends Menu {
     // try with catch statements to close out scanner
     private void handleQuizOptions() {
     	Scanner input= new Scanner(System.in);
-    
+    	String back="back";
+    	String side="side";
     	//Prompt user for price
-    	System.out.print("What is your price range? \n 1= $500-$699, \n 2=$700-$900, \n 3=$900+");
+    	System.out.print("What is the maximum price you are willing to spend? ");
     	double filterByPrice=input.nextDouble();
-    	while (filterByPrice != 1 && filterByPrice != 2 && filterByPrice != 3) {
-			System.err.println("Please enter price options of 1, 2, or 3 only");
+    	while (filterByPrice <0) {
+			System.err.println("Please enter positive numbers only.");
 			System.out.println("");
-			System.out.println("Please re-enterprice options: ");
+			System.out.println("Please re-enter price options: ");
 			filterByPrice = input.nextDouble();
 			
 
 		}	
     	//Prompt for firmness from 1-5 soft, medium, hard
-    	System.out.print("What is your firmness preference? 1=soft, 2=medium, 3=hard ");
+    	System.out.print("What is your preferred firmness 1-7? 1 being softest 7 being most firm");
     	int filterByFirmness=input.nextInt();
-    	while (filterByFirmness != 1 && filterByFirmness != 2 && filterByFirmness != 3) {
-			System.err.println("Please enter firmness preference of 1, 2, or 3 only");
+    	while (filterByFirmness <0 || filterByFirmness>8) {
+			System.err.println("Please enter firmness rating between 1 and 7");
 			System.out.println("");
 			System.out.println("Please re-enter firmness preference options: ");
 			filterByFirmness = input.nextInt();
 		}	
     	//prompt for position back or side
     	//IS THIS GOING TO WORK WITH THE STRING TO INT CONVERSION?
-    	System.out.print("What is your preferred sleeping position? back, bide");
+    	System.out.print("What is your preferred sleeping position? back, side");
     	String filterByPosition= input.next();
     	
-    	while (filterByPosition != "back" && filterByPosition != "side") {
-			System.err.println("Please enter postition option of back or side only");
+    	while (filterByPosition == "back" && filterByPosition == "side") {
+			
+    		//String position = null;
+    		//if (filterByPosition.equals("back")) {
+			//	position = String.valueOf(back);
+			//}
+			//else if(filterByPosition.equals("side")){
+			//	position = String.valueOf(side);
+			//}
+    		
+    		System.err.println("Please enter postition option of back or side only");
 			System.out.println("");
 			System.out.println("Please re-enter position preference: ");
 			filterByPosition= input.next();
