@@ -10,7 +10,7 @@ import java.io.*;
 
 public class MattressDatabase {
       
-        private static final String FILEPATH = "mattress.txt";
+        protected static final String FILEPATH = "mattress.txt";
         private static ArrayList<Mattress> bed = null;
         
         /**
@@ -58,7 +58,7 @@ public class MattressDatabase {
                 //load mattress data from the file 
              while(scanner.hasNextLine()) {
             	 String line = scanner.nextLine();
-            	// String[] fields=line.split(",");
+            	 //String[] fields=line.split(",");
             	 
             	 try {
             	 Mattress newMattress = new Mattress();
@@ -77,6 +77,28 @@ public class MattressDatabase {
             		 if(line.contains("Bed-In-A-Box") && traditionalList == true)
             		 System.out.println(newMattress.getType());
             	 	}
+            	 
+            	 else if (mattressType == "Quiz") {
+            		 while(scanner.hasNextLine()) {
+            			 String userInput = scanner.nextLine();
+            			 String[] fields = userInput.split(",");
+            			 try {Mattress mattressQuiz = new Mattress();
+            			 	
+            			 mattressQuiz.setPrice(Double.parseDouble(fields[3]));
+            			 mattressQuiz.setPosition(fields[4]);
+            			 mattressQuiz.setFirmness(Integer.parseInt(fields[7]));
+            			 System.out.println(fields[4] + fields[3]+ fields[7]);	
+            				 
+            				 
+            			 }
+            			 catch(NumberFormatException ex) {
+            				 continue;
+            			 }
+            			 
+            			 
+            		 }
+            		 
+            	 } 
             	 }
             	 catch (NumberFormatException ex) {
             		 continue;

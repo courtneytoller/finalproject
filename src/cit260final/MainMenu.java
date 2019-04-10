@@ -39,10 +39,10 @@ public class MainMenu extends Menu {
 	 */
 	@Override
 	protected MenuItem[] getMenuItems() {
-		return new MenuItem[] { 
-				new MenuItem('1', "Mattress Menu"),
+		return new MenuItem[] { new MenuItem('1', "Mattress Menu"),
 				new MenuItem('2', "Find the Best Mattress for You"),
-				new MenuItem('F', "Financial"), new MenuItem('Q', "Quit Program") };
+				new MenuItem('F', "Financial"),
+				new MenuItem('Q', "Quit Program") };
 	}
 
 	/**
@@ -71,7 +71,7 @@ public class MainMenu extends Menu {
 			return false;
 
 		default:
-			System.out.println("Invalid Entry");
+			System.err.println("Invalid Entry");
 
 		}
 
@@ -122,9 +122,9 @@ public class MainMenu extends Menu {
 		Scanner input = new Scanner(System.in);
 
 		try {
-			//prompt, trying to figure it out...
-System.out.print("Please Enter Mattress Price:");
-			//String prompt= prompt("Please Enter Mattress Price:");
+			// prompt, trying to figure it out...
+			System.out.print("Please Enter Mattress Price:");
+			// String prompt= prompt("Please Enter Mattress Price:");
 			double price = input.nextDouble();
 			// check for negative number
 			while (price < 0) {
@@ -158,15 +158,16 @@ System.out.print("Please Enter Mattress Price:");
 			// mismatch handling here.
 			double result = calculateFinance(price, years, cashDown);
 			System.out.printf("Your Monthly Payment is: $%.2f\n", result);
-		//look at catch again see what exception we need
-			//figure out no such element exception
+			// look at catch again see what exception we need
+			// figure out no such element exception
 		} catch (InputMismatchException ex) {
-			System.out.println("Input not accepted, enter an integer: ");
+			System.err.println("Input not accepted, enter numbers only: ");
 			input.nextLine();
+			input.close();
 		}
-		input.close();
+
 	}
-	//store user input
-	//output the user enters for user as summary. 
-	//print finance results for user including payment per month.
+	// store user input
+	// output the user enters for user as summary.
+	// print finance results for user including payment per month.
 }

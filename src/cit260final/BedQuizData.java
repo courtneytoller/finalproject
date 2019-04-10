@@ -1,21 +1,48 @@
 package cit260final;
-
+import java.util.Scanner;
+import java.io.File;
 import java.util.ArrayList;
 
-public abstract class BedQuizData {
+public abstract class BedQuizData extends MattressDatabase{
 	
-	//if statements for price points for user input
 	ArrayList<Mattress> bed = new ArrayList<Mattress>();
-	//new object for Mattress that calls user input
-	//pass user input into each method to test
-	//filter through mattresses
 	
 	public BedQuizData() {
 		
 	}
+	public static void readMattress(){
+      
+      try (Scanner scanner = new Scanner(FILEPATH)) {
+	  
+		 while(scanner.hasNextLine()) {
+			 String userInput = scanner.nextLine();
+			 String[] fields = userInput.split(",");
+			 try {Mattress mattressQuiz = new Mattress();
+			 	
+			 mattressQuiz.setPrice(Double.parseDouble(fields[3]));
+			 mattressQuiz.setPosition(fields[4]);
+			 mattressQuiz.setFirmness(Integer.parseInt(fields[7]));
+			 System.out.println(fields[4] + fields[3]+ fields[7]);	
+				 
+				 
+			 }
+			 catch(NumberFormatException ex) {
+				 continue;
+			 }
+		 }
+		 
+	 } 
+	}
 	
     public static ArrayList<Mattress> filterByPrice(ArrayList<Mattress> bed, double price){
     	//takes in ArrayList and filters by price  of mattress that the user specifies.
+    	if(price <700) {
+    		
+    	}else if(price >700 && price <900) {
+    		
+    	}else if(price >901) {
+    		
+    	}
     	return null;
     }
 
