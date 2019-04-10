@@ -92,14 +92,6 @@ public class MattressSearchMenu extends Menu {
     	
     	while (filterByPosition == "back" && filterByPosition == "side") {
 			
-    		//String position = null;
-    		//if (filterByPosition.equals("back")) {
-			//	position = String.valueOf(back);
-			//}
-			//else if(filterByPosition.equals("side")){
-			//	position = String.valueOf(side);
-			//}
-    		
     		System.err.println("Please enter postition option of back or side only");
 			System.out.println("");
 			System.out.println("Please re-enter position preference: ");
