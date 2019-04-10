@@ -62,12 +62,13 @@ public class MattressSearchMenu extends Menu {
     }
     // try with catch statements to close out scanner
     private void handleQuizOptions() {
-    	Scanner input= new Scanner(System.in);
-    	String back="back";
-    	String side="side";
+    	Scanner input = new Scanner(System.in);
+    	String back = "back";
+    	String side = "side";
+    	
     	//Prompt user for price
     	System.out.print("What is the maximum price you are willing to spend? ");
-    	double filterByPrice=input.nextDouble();
+    	double filterByPrice = input.nextDouble();
     	while (filterByPrice <0) {
 			System.err.println("Please enter positive numbers only.");
 			System.out.println("");
@@ -87,19 +88,22 @@ public class MattressSearchMenu extends Menu {
 		}	
     	//prompt for position back or side
     	//IS THIS GOING TO WORK WITH THE STRING TO INT CONVERSION?
-    	System.out.print("What is your preferred sleeping position? back, side");
-    	String filterByPosition= input.next();
     	
-    	while (filterByPosition == "back" && filterByPosition == "side") {
-			
-    		System.err.println("Please enter postition option of back or side only");
-			System.out.println("");
-			System.out.println("Please re-enter position preference: ");
-			filterByPosition= input.next();
-		}	
-    	//Mattress mattress = new Mattress(price, firmness, position);
+    	boolean validAnswer = false; 
+    	while(!validAnswer) {
+    		System.out.print("What is your preferred sleeping position? back, side");
+    		String filterByPosition = input.next();
+    		
+    		if (filterByPosition == "side" || filterByPosition == "back") {
+    			validAnswer = true;
+    			
+    		}
+    		else {
+    			System.out.println("Please put in back or side");
+    			System.out.println("");
+    		}
     	
-       	
+    	}
     
        	//Option to print list of 25 mattresses
        	//Output top 3 mattresses String
