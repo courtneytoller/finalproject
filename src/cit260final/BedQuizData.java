@@ -34,16 +34,18 @@ public abstract class BedQuizData extends MattressDatabase{
 	 } 
 	}
 	
-    public static ArrayList<Mattress> filterByPrice(ArrayList<Mattress> bed, double price){
+	
+	
+	
+    public static ArrayList<Mattress> filterByPrice(ArrayList<Mattress> mattresses, double maxPrice){
     	//takes in ArrayList and filters by price  of mattress that the user specifies.
-    	if(price <700) {
-    		
-    	}else if(price >700 && price <900) {
-    		
-    	}else if(price >901) {
-    		
+    	ArrayList<Mattress> matchMattress = new ArrayList<>();
+    	for(Mattress m: mattresses) {
+    		if(m.getPrice() <= maxPrice) {
+    			matchMattress.add(m);
+    		}    		
     	}
-    	return null;
+    	return matchMattress;
     }
 
     public static ArrayList<Mattress> filterByFirmness(ArrayList<Mattress> bed, int firmness){
