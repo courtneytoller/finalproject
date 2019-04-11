@@ -10,30 +10,7 @@ public abstract class BedQuizData extends MattressDatabase{
 	public BedQuizData() {
 		
 	}
-	/*public static void readMattress(){
-      
-      try (Scanner scanner = new Scanner(FILEPATH)) {
-	  
-		 while(scanner.hasNextLine()) {
-			 String userInput = scanner.nextLine();
-			 String[] fields = userInput.split(",");
-			 try {Mattress mattressQuiz = new Mattress();
-			 	
-			 mattressQuiz.setPrice(Double.parseDouble(fields[3]));
-			 mattressQuiz.setPosition(fields[4]);
-			 mattressQuiz.setFirmness(Integer.parseInt(fields[7]));
-			 System.out.println(fields[4] + fields[3]+ fields[7]);	
-				 
-				 
-			 }
-			 catch(NumberFormatException ex) {
-				 continue;
-			 }
-		 }
-		 
-	 } 
-	}
-	*/
+
 	
 	
 	

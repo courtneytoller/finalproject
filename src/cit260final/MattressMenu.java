@@ -89,23 +89,24 @@ public class MattressMenu extends Menu {
 	// return result;
 	// }
 	private void processPrintMattress() {
-		ArrayList<Mattress> result = printMattress(ArrayList <Mattress> mattressList, "back");
+		ArrayList<Mattress> mattresses = MattressDatabase.getBed();
+		for(Mattress m: mattresses) {
+			System.out.println(m.toString());
+		}
 		
-		System.out.println(result);
 	}
 
-	public static ArrayList<Mattress> printMattress(ArrayList<Mattress> mattressList, String position) {
+	/*public static ArrayList<Mattress> printMattress(ArrayList<Mattress> mattressList) {
 		ArrayList<Mattress> mattresses = new ArrayList<>();
 		for (Mattress m : mattressList) {
-			if (m.getPosition().equals(position)) {
-					mattresses.add(m);
+			
 				}
 		}
 		
 		return mattresses;
 
 	}
-
+*/
 	/**
 	 * displays all bed in a box mattresses
 	 * 

@@ -97,4 +97,9 @@ public class Mattress {
     	this.type = type;
     }
     
+    public String toString() {
+    	return (rank + "   " + brand + "   " + rating + "   " + "$"+ price + "   " + position + "   " + durability
+    			+ "   " + stabilization + "   " + firmness+ "   " + type);
+    }
 }
+
