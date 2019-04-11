@@ -94,13 +94,14 @@ public class MattressSearchMenu extends Menu {
     		System.out.print("What is your preferred sleeping position? back, side");
     		String filterByPosition = input.next();
     		
-    		if (filterByPosition == "side" || filterByPosition == "back") {
+    		if (filterByPosition.equals("side") || filterByPosition.equals("back")) {
     			validAnswer = true;
     			
     		}
     		else {
-    			System.out.println("Please put in back or side");
     			System.out.println("");
+    			System.err.println("Please put in back or side only");
+    			
     		}
     	
     	}
