@@ -36,8 +36,7 @@ public class MattressSearchMenu extends Menu {
                 new MenuItem('R', "Return")
         };
     }
-    
-    
+        
     /**
      * Handle the user's menu selection.
      * @param key
@@ -94,9 +93,10 @@ public class MattressSearchMenu extends Menu {
     		System.out.print("What is your preferred sleeping position? back, side");
     		String filterByPosition = input.next();
     		
-    		if (filterByPosition == "side" || filterByPosition == "back") {
+    		if (filterByPosition.equals("side") || filterByPosition.equals("back")) {
     			validAnswer = true;
-    			
+    			System.out.println("You chose " + filterByPosition);
+    			  			
     		}
     		else {
     			System.out.println("Please put in back or side");
