@@ -106,7 +106,7 @@ public class MattressSearchMenu extends Menu {
 
 				}
 			ArrayList<Mattress> result = processQuizOptions(filterByPrice, filterByFirmness, filterByPosition);
-				System.out.printf("The Mattresses that match your specifications are: $%.2f\n", result);
+				System.out.printf("The Mattresses that match your specifications are: ", result);
 			}
 		} catch (InputMismatchException ex) {
 			System.err.println("Incorrect input. Please try again.");

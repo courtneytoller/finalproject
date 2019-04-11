@@ -58,7 +58,7 @@ public class MattressMenu extends Menu {
 			processPrintMattress();
 			break;
 		case '2':
-			// printBiab();
+			//printBiab();
 
 			break;
 		case '3':
@@ -89,16 +89,19 @@ public class MattressMenu extends Menu {
 	// return result;
 	// }
 	private void processPrintMattress() {
-		ArrayList<Mattress> result = printMattress(MattressDatabase.getBed());
+		ArrayList<Mattress> result = printMattress(ArrayList <Mattress> mattressList, "back");
+		
 		System.out.println(result);
 	}
 
-	public static ArrayList<Mattress> printMattress(ArrayList<Mattress> mattressList) {
+	public static ArrayList<Mattress> printMattress(ArrayList<Mattress> mattressList, String position) {
 		ArrayList<Mattress> mattresses = new ArrayList<>();
 		for (Mattress m : mattressList) {
-			mattresses.add(m);
+			if (m.getPosition().equals(position)) {
+					mattresses.add(m);
+				}
 		}
-
+		
 		return mattresses;
 
 	}
@@ -110,10 +113,10 @@ public class MattressMenu extends Menu {
 	 * @param typeToFind
 	 * @return
 	 */
-	public static ArrayList<Mattress> printBiab(ArrayList<Mattress> mattressList, String mattressType) {
+	public static ArrayList<Mattress> printBiab(ArrayList<Mattress> mattressList, String position) {
 		ArrayList<Mattress> mattresses = MattressDatabase.getBed();
 		for (Mattress m : mattressList) {
-			if (m.getType().equals(mattressType)) {
+			if (m.getPosition().equals(position)) {
 				mattresses.add(m);
 			}
 		}
@@ -147,7 +150,6 @@ public class MattressMenu extends Menu {
 				mattresses.add(m);
 			}
 		}
-		mattresses = MattressMenu.filterByType(mattresses, "Traditional");
 		return mattresses;
 	}
 
