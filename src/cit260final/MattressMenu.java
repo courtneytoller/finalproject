@@ -55,14 +55,14 @@ public class MattressMenu extends Menu {
 
 		switch (Character.toUpperCase(key)) {
 		case '1':
-			//processPrintMattress();
+			processPrintMattress();
 			break;
 		case '2':
-			//printMattress();
+			//printBiab();
 
 			break;
 		case '3':
-			//printMattress();
+			//printTraditional();
 			break;
 		case '4':
 			Menu mattressSearchMenu = new MattressSearchMenu();
@@ -78,11 +78,6 @@ public class MattressMenu extends Menu {
 		return true;
 	}
 
-	//private void processPrintMattress() {
-	//	ArrayList<Mattress> result = printMattress(ArrayList<Mattress>mattressList);
-	//	System.out.println(result);
-	//}
-
 	/**
 	 * this will bring in the the top 25 mattress list for the user to view
 	 * 
@@ -93,9 +88,18 @@ public class MattressMenu extends Menu {
 		//String result = printMattress(<ArrayList<Mattress>);
 		//return result;
 	//}
+	private void processPrintMattress() {
+		ArrayList<Mattress> result = printMattress(MattressDatabase.getBed());
+		System.out.println(result);
+		}
 	
 	public static ArrayList<Mattress> printMattress(ArrayList<Mattress> mattressList) {
 		ArrayList<Mattress> mattresses= new ArrayList<>();
+		for (Mattress m: mattressList) {
+			
+		}
+		
+		
 		return mattresses;
 
 	}
@@ -107,15 +111,11 @@ public class MattressMenu extends Menu {
 	 * @param typeToFind
 	 * @return
 	 */
-	/*public static ArrayList<Mattress> printBiab(ArrayList<Mattress> mattressList, String typeToFind) {
-		ArrayList<Mattress> foundMattress = new ArrayList<>();
-		for (Mattress m : mattressList) {
-			if (m.getType().contentEquals(typeToFind)) {
-				foundMattress.add(m);
-			}
+	public static ArrayList<Mattress> printBiab(ArrayList<Mattress> mattressList, String typeToFind) {
+		ArrayList<Mattress> mattresses = MattressDatabase.getBed();
+		  
+		 return mattresses = MattressMenu.filterByType(mattresses, "Traditional");
 
-		}
-		return foundMattress;
 	}
 
 	public static ArrayList<Mattress> filterByType(ArrayList<Mattress> mattressList, String mattressType) {
@@ -137,11 +137,11 @@ public class MattressMenu extends Menu {
 	 * @return
 	 */
 	
-	/*  public static ArrayList<Mattress> printTraditional(ArrayList<Mattress> mattressList, String mattressType) {
+	 public static ArrayList<Mattress> printTraditional(ArrayList<Mattress> mattressList, String mattressType) {
 
 			ArrayList<Mattress> mattresses = MattressDatabase.getBed();
 		  
 	 return mattresses = MattressMenu.filterByType(mattresses, "Traditional");
 	  }
-	 */
+	 
 }

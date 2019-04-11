@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public abstract class BedQuizData extends MattressDatabase{
 	
-	ArrayList<Mattress> bed = new ArrayList<Mattress>();
+	ArrayList<Mattress> mattresses = new ArrayList<Mattress>();
 	
 	public BedQuizData() {
 		
