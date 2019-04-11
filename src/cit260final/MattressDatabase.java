@@ -18,10 +18,10 @@ public class MattressDatabase {
 	 * 
 	 * @return
 	 */
-	synchronized public static ArrayList<Mattress> getBed(String mattressType) {
+	synchronized public static ArrayList<Mattress> getBed() {
 
 		if (mattressList == null) {
-			loadBed(mattressType);
+			loadBed();
 		}
 
 		return mattressList;
@@ -53,10 +53,10 @@ public class MattressDatabase {
 	 * 
 	 * @return
 	 */
-	public static void loadBed(String mattressType) {
+	public static void loadBed() {
 
 		File textFile = new File(FILEPATH);
-		boolean traditionalList = true;
+	//	boolean traditionalList = true;
 		mattressList = new ArrayList <Mattress>();
 
 		try (Scanner scanner = new Scanner(textFile)) {
@@ -65,15 +65,23 @@ public class MattressDatabase {
 				String line = scanner.nextLine();
 				String[] fields=line.split(",");
 				
+				//parameters for arrayList
 				Mattress mattress = new Mattress();
 				mattress.setRank(Integer.parseInt(fields [0].trim()));
 				mattress.setBrand(fields[1].trim());
+				mattress.setRating(Integer.parseInt(fields [2].trim()));
+				mattress.setPrice(Double.parseDouble(fields[3].trim()));
+				mattress.setPosition(fields [4].trim());
+				mattress.setDurability(fields[5].trim());
+				mattress.setStabilization(fields[6].trim());
+				mattress.setFirmness(Integer.parseInt(fields [7].trim()));
+				mattress.setType(fields [8].trim());
 			    //... fill in rest of parameters
 				mattressList.add(mattress);
 				
 
 				//move this try catch to mattress type filter method
-				try {
+				/*try {
 					Mattress newMattress = new Mattress();
 					newMattress.setType(line);
 
@@ -114,7 +122,7 @@ public class MattressDatabase {
 				} catch (NumberFormatException ex) {
 					continue;
 				}
-
+*/
 			}
 
 		} catch (FileNotFoundException exception) {

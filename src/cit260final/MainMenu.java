@@ -166,9 +166,5 @@ public class MainMenu extends Menu {
 			
 		}
 
-	
-	// store user input
-	// output the user enters for user as summary.
-	// print finance results for user including payment per month.
 	}
 }

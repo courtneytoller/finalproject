@@ -6,7 +6,7 @@ public class Mattress {
 	private int rating;
 	private double price;
 	private String durability;
-	private int stabilization;
+	private String stabilization;
     private int firmness;
     private String position;
     private String type;
@@ -17,11 +17,17 @@ public class Mattress {
        
     }
     
-    public Mattress(double price, int firmness, String position, String type) {
+    public Mattress(int rank, String brand, int rating, double price, String durability, String stabilization, int firmness, String position, String type) {
+    	this.rank = rank;
+    	this.brand = brand;
+    	this.rating = rating;
     	this.price= price;
+    	this.durability = durability;
+    	this.stabilization = stabilization;
     	this.firmness= firmness;
     	this.position= position;
     	this.type = type;
+    	
     }
     /**
      * getters and setters rank, Brand, rating,
@@ -63,10 +69,10 @@ public class Mattress {
     public void setDurability(String durability) {
     	this.durability = durability;
     }
-    public int getStabilization() {
+    public String getStabilization() {
     	return stabilization;
     }
-    public void setStabilization(int stabilization) {
+    public void setStabilization(String stabilization) {
     	this.stabilization = stabilization;
     }
 

@@ -10,7 +10,7 @@ public abstract class BedQuizData extends MattressDatabase{
 	public BedQuizData() {
 		
 	}
-	public static void readMattress(){
+	/*public static void readMattress(){
       
       try (Scanner scanner = new Scanner(FILEPATH)) {
 	  
@@ -33,7 +33,7 @@ public abstract class BedQuizData extends MattressDatabase{
 		 
 	 } 
 	}
-	
+	*/
 	
 	
 	
@@ -48,29 +48,27 @@ public abstract class BedQuizData extends MattressDatabase{
     	return matchMattress;
     }
 
-    public static ArrayList<Mattress> filterByFirmness(ArrayList<Mattress> bed, int firmness){
+    public static ArrayList<Mattress> filterByFirmness(ArrayList<Mattress> mattresses, int maxFirmness){
     	//takes in ArrayList and filters by firmness of mattress that the user specifies.
-    	if( firmness>1 && firmness <3) {
-    		//soft
-    	}else if (firmness>4 && firmness<6){
-    		//medium
-    	}else if (firmness>7 && firmness <10) {
-    		//hard
+    	ArrayList<Mattress> matchMattress = new ArrayList<>();
+    	for(Mattress m: mattresses) {
+    		if(m.getFirmness() <= maxFirmness) {
+    			matchMattress.add(m);
+    		}    		
     	}
-    	return null;
+    	return matchMattress;
     }
-    
-    public static ArrayList<Mattress> filterByPosition(ArrayList<Mattress> bed, String position){
-       	//takes in ArrayList and filters by position of mattress that the user specifies.
-    	if (position.equals("back")) {
-    		//back beds
-    		
-    	}else if(position.equals("side")) {
-    		//side beds
+
+    public static ArrayList<Mattress> filterByPosition(ArrayList<Mattress> mattresses, String maxPosition){
+    	ArrayList<Mattress> matchMattress = new ArrayList<>();
+    	for(Mattress m: mattresses) {
+    		if(m.getPosition().equals(maxPosition)) {
+    			matchMattress.add(m);
+    		}    		
     	}
-    	return null;
-       }
-    
+    	return matchMattress;
+    }
+
     public static String printMattressData(ArrayList<Mattress> bed) {
         //this will return found mattresses and bring in the three recommended mattresses. this will print
     	//to file so user can have record of results.

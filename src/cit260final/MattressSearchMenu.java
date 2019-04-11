@@ -67,8 +67,8 @@ public class MattressSearchMenu extends Menu {
 	// try with catch statements to close out scanner
 	private void handleQuizOptions() {
 		Scanner input = new Scanner(System.in);
-		String back = "back";
-		String side = "side";
+		//String back = "back";
+		//String side = "side";
 		try {
 			// Prompt user for price
 			System.out.print("What is the maximum price you are willing to spend? ");
@@ -105,7 +105,8 @@ public class MattressSearchMenu extends Menu {
 					System.err.println("Please put in back or side only");
 
 				}
-
+			ArrayList<Mattress> result = processQuizOptions(filterByPrice, filterByFirmness, filterByPosition);
+				System.out.printf("The Mattresses that match your specifications are: $%.2f\n", result);
 			}
 		} catch (InputMismatchException ex) {
 			System.err.println("Incorrect input. Please try again.");
@@ -118,12 +119,12 @@ public class MattressSearchMenu extends Menu {
 	private ArrayList<Mattress> processQuizOptions(double filterByPrice, int filterByFirmness,
 		String filterByPosition) {
 		// filter user input to arrays that will find
-		ArrayList<Mattress> mattresses = MattressDatabase.getBed("this needs to be fixed");
+		ArrayList<Mattress> mattresses = MattressDatabase.getBed();
 		mattresses = BedQuizData.filterByPrice(mattresses, filterByPrice);
 		mattresses = BedQuizData.filterByFirmness(mattresses, filterByFirmness);
 		mattresses = BedQuizData.filterByPosition(mattresses, filterByPosition);
 		//second parameter passed through the method will look for individual mattress
-		mattresses = MattressMenu.filterByType(mattresses, "Traditional");
+		//mattresses = MattressMenu.filterByType(mattresses, "Traditional");
 		return mattresses;
 	}
 
