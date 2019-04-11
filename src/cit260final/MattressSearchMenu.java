@@ -1,6 +1,6 @@
 package cit260final;
 import java.util.Scanner;
-
+import java.util.InputMismatchException;
 import java.util.ArrayList;
 import cit260final.BedQuizData;
 public class MattressSearchMenu extends Menu {
@@ -65,7 +65,7 @@ public class MattressSearchMenu extends Menu {
     	Scanner input = new Scanner(System.in);
     	String back = "back";
     	String side = "side";
-    	
+    	try {
     	//Prompt user for price
     	System.out.print("What is the maximum price you are willing to spend? ");
     	double filterByPrice = input.nextDouble();
@@ -80,7 +80,7 @@ public class MattressSearchMenu extends Menu {
     	//Prompt for firmness from 1-5 soft, medium, hard
     	System.out.print("What is your preferred firmness 1-7? 1 being softest 7 being most firm");
     	int filterByFirmness=input.nextInt();
-    	while (filterByFirmness <0 || filterByFirmness>8) {
+    	while (filterByFirmness <0 || filterByFirmness>7) {
 			System.err.println("Please enter firmness rating between 1 and 7");
 			System.out.println("");
 			System.out.println("Please re-enter firmness preference options: ");
@@ -94,21 +94,26 @@ public class MattressSearchMenu extends Menu {
     		System.out.print("What is your preferred sleeping position? back, side");
     		String filterByPosition = input.next();
     		
-    		if (filterByPosition == "side" || filterByPosition == "back") {
+    		if (filterByPosition.equals("side") || filterByPosition.equals("back")) {
     			validAnswer = true;
     			
     		}
     		else {
-    			System.out.println("Please put in back or side");
     			System.out.println("");
+    			System.err.println("Please put in back or side only");
+    			
     		}
     	
     	}
-    
+    	}catch(InputMismatchException ex) {
+    		System.err.println("Incorrect input. Please try again.");
+    		System.out.print("");
+    	}
        	//Option to print list of 25 mattresses
        	//Output top 3 mattresses String
 //exception handling
     }
+
   private String processQuizOptions(double filterByPrice, int filterByFirmness, String filterByPostion) {
 	  // filter user input to arrays that will find
 	  

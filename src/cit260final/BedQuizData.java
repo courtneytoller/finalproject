@@ -48,11 +48,24 @@ public abstract class BedQuizData extends MattressDatabase{
 
     public static ArrayList<Mattress> filterByFirmness(ArrayList<Mattress> bed, int firmness){
     	//takes in ArrayList and filters by firmness of mattress that the user specifies.
+    	if( firmness>1 && firmness <3) {
+    		//soft
+    	}else if (firmness>4 && firmness<6){
+    		//medium
+    	}else if (firmness>7 && firmness <10) {
+    		//hard
+    	}
     	return null;
     }
     
     public static ArrayList<Mattress> filterByPosition(ArrayList<Mattress> bed, String position){
        	//takes in ArrayList and filters by position of mattress that the user specifies.
+    	if (position.equals("back")) {
+    		//back beds
+    		
+    	}else if(position.equals("side")) {
+    		//side beds
+    	}
     	return null;
        }
     
