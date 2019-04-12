@@ -4,6 +4,10 @@ import java.util.Scanner;
 import java.util.InputMismatchException;
 import java.util.ArrayList;
 import cit260final.BedQuizData;
+import java.io.PrintWriter;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.PrintStream;
 
 public class MattressSearchMenu extends Menu {
 
@@ -67,8 +71,8 @@ public class MattressSearchMenu extends Menu {
 	// try with catch statements to close out scanner
 	private void handleQuizOptions() {
 		Scanner input = new Scanner(System.in);
-		//String back = "back";
-		//String side = "side";
+		// String back = "back";
+		// String side = "side";
 		try {
 			// Prompt user for price
 			System.out.print("What is the maximum price you are willing to spend? ");
@@ -105,26 +109,40 @@ public class MattressSearchMenu extends Menu {
 					System.err.println("Please put in back or side only");
 
 				}
-			ArrayList<Mattress> result = processQuizOptions(filterByPrice, filterByFirmness, filterByPosition);
-				System.out.printf("The Mattresses that match your specifications are: ", result);
+				ArrayList<Mattress> result = processQuizOptions(filterByPrice, filterByFirmness, filterByPosition);
+				
+				System.out.println("The Mattresses that match your specifications are: ");
+				BedQuizData.printMattressData(result, System.out);
+				String filename= prompt("Enter the file name to save report");
+				if (filename.trim().length()==0) {
+					continue;
+				}
+				PrintStream out= new PrintStream(new FileOutputStream(filename));
+				BedQuizData.printMattressData(result, out);
+				out.flush();
+				out.close();
 			}
+			
 		} catch (InputMismatchException ex) {
 			System.err.println("Incorrect input. Please try again.");
 			System.out.print("");
+		}catch (IOException ex) {
+			System.err.println("Could not open File");
+			
 		}
-		//process Quiz options to get filtered results
-		//using a for each loop print out the matching mattresses
+		// process Quiz options to get filtered results
+		// using a for each loop print out the matching mattresses
 	}
 
 	private ArrayList<Mattress> processQuizOptions(double filterByPrice, int filterByFirmness,
-		String filterByPosition) {
+			String filterByPosition) {
 		// filter user input to arrays that will find
 		ArrayList<Mattress> mattresses = MattressDatabase.getBed();
 		mattresses = BedQuizData.filterByPrice(mattresses, filterByPrice);
 		mattresses = BedQuizData.filterByFirmness(mattresses, filterByFirmness);
 		mattresses = BedQuizData.filterByPosition(mattresses, filterByPosition);
-		//second parameter passed through the method will look for individual mattress
-		//mattresses = MattressMenu.filterByType(mattresses, "Traditional");
+		// second parameter passed through the method will look for individual mattress
+		// mattresses = MattressMenu.filterByType(mattresses, "Traditional");
 		return mattresses;
 	}
 
