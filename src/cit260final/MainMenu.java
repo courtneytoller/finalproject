@@ -92,6 +92,10 @@ public class MainMenu extends Menu {
 		double remainingBalance = price - cashDown;
 		int months = years * 12;
 
+		if (cashDown > price) {
+			System.err.println("You don't need financing dummy! ");
+		}
+
 		if (years == 1) {
 			interestRate = .05;
 		} else if (years == 3) {
@@ -114,7 +118,7 @@ public class MainMenu extends Menu {
 	 * or 5 years to finance and amount of cash down. Return result of calculate
 	 * finance.
 	 */
-	private void handleFinance() {
+	private static void handleFinance() {
 		Scanner input = new Scanner(System.in);
 
 		try {
