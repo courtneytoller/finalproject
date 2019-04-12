@@ -2,8 +2,6 @@ package cit260final;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.regex.Pattern;
-
 import cit260final.Mattress;
 import java.io.*;
 //methods for get type for bed in a box and traditional
@@ -27,8 +25,6 @@ public class MattressDatabase {
 		return mattressList;
 	}
 
-	// our method for cycling through user input to find bed will go here
-	//
 	/**
 	 * Write the list of mattresses out to a file.
 	 * 
@@ -39,7 +35,6 @@ public class MattressDatabase {
 		File textFile = new File(FILEPATH);
 
 		try (PrintWriter out = new PrintWriter(new FileOutputStream(textFile))) {
-			// store mattress data to be used for other methods in program.
 
 		} catch (FileNotFoundException exception) {
 			System.err.println("Could not find file path");
@@ -49,80 +44,34 @@ public class MattressDatabase {
 	}
 
 	/**
-	 * Load the bed file back into the program.
+	 * Load the mattress file back into the program.
 	 * 
 	 * @return
 	 */
 	public static void loadBed() {
 
 		File textFile = new File(FILEPATH);
-	//	boolean traditionalList = true;
-		mattressList = new ArrayList <Mattress>();
+		mattressList = new ArrayList<Mattress>();
 
 		try (Scanner scanner = new Scanner(textFile)) {
 			// load mattress data from the file
 			while (scanner.hasNextLine()) {
 				String line = scanner.nextLine();
-				String[] fields=line.split(",");
-				
-				//parameters for arrayList
+				String[] fields = line.split(",");
+
+				// parameters for arrayList
 				Mattress mattress = new Mattress();
-				mattress.setRank(Integer.parseInt(fields [0].trim()));
+				mattress.setRank(Integer.parseInt(fields[0].trim()));
 				mattress.setBrand(fields[1].trim());
-				mattress.setRating(Integer.parseInt(fields [2].trim()));
+				mattress.setRating(Integer.parseInt(fields[2].trim()));
 				mattress.setPrice(Double.parseDouble(fields[3].trim()));
-				mattress.setPosition(fields [4].trim());
+				mattress.setPosition(fields[4].trim());
 				mattress.setDurability(fields[5].trim());
 				mattress.setStabilization(fields[6].trim());
-				mattress.setFirmness(Integer.parseInt(fields [7].trim()));
-				mattress.setType(fields [8].trim());
-			    //... fill in rest of parameters
+				mattress.setFirmness(Integer.parseInt(fields[7].trim()));
+				mattress.setType(fields[8].trim());
+
 				mattressList.add(mattress);
-				
-
-				//move this try catch to mattress type filter method
-				/*try {
-					Mattress newMattress = new Mattress();
-					newMattress.setType(line);
-
-					if (mattressType == "All") {
-						System.out.println(newMattress.getType());
-					}
-
-					else if (mattressType == "TraditionalMattress") {
-						if (line.contains("Traditional") && traditionalList == true)
-							System.out.println(newMattress.getType());
-					}
-
-					else if (mattressType == "BedInBox") {
-						if (line.contains("Bed-In-A-Box") && traditionalList == true)
-							System.out.println(newMattress.getType());
-					}
-
-					else if (mattressType == "Quiz") {
-						while (scanner.hasNextLine()) {
-							String userInput = scanner.nextLine();
-							//String[] fields = userInput.split(",");
-							
-							try {
-								Mattress mattressQuiz = new Mattress();
-
-								mattressQuiz.setPrice(Double.parseDouble(fields[3]));
-								mattressQuiz.setPosition(fields[4]);
-								mattressQuiz.setFirmness(Integer.parseInt(fields[7]));
-								System.out.println(fields[4] + fields[3] + fields[7]);
-
-							} catch (NumberFormatException ex) {
-								continue;
-							}
-
-						}
-
-					}
-				} catch (NumberFormatException ex) {
-					continue;
-				}
-*/
 			}
 
 		} catch (FileNotFoundException exception) {

@@ -1,7 +1,6 @@
 package cit260final;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class MattressMenu extends Menu {
 
@@ -55,7 +54,7 @@ public class MattressMenu extends Menu {
 
 		switch (Character.toUpperCase(key)) {
 		case '1':
-			processPrintMattress();
+			printMattress();
 			break;
 		case '2':
 			printBiab();
@@ -79,50 +78,49 @@ public class MattressMenu extends Menu {
 	}
 
 	/**
-	 * this will bring in the the top 25 mattress list for the user to view
-	 * 
-	 * @param database
-	 * @return
+	 * prints all 25 mattresses
 	 */
-	
-	private void processPrintMattress() {
+	private void printMattress() {
 		ArrayList<Mattress> mattresses = MattressDatabase.getBed();
-		for(Mattress m: mattresses) {
+		for (Mattress m : mattresses) {
 			System.out.println(m.toString());
 		}
-		
+
 	}
 
 	/**
-	 * displays all bed in a box mattresses
-	 * 
-	 * @param database
-	 * @param typeToFind
-	 * @return
+	 * prints out all the traditional mattresses
 	 */
 	public void printTraditional() {
 		ArrayList<Mattress> mattresses = MattressDatabase.getBed();
-		for(Mattress m: mattresses) {
-			if (m.getType().contains("Traditional")){
+		for (Mattress m : mattresses) {
+			if (m.getType().contains("Traditional")) {
 				System.out.println(m.toString());
 			}
 		}
-		//mattresses = MattressMenu.filterByType(mattresses, "Bed-In-A-Box");
-		//return mattresses;
 	}
-	
+
+	/**
+	 * prints all the Bed in a box mattresses
+	 */
 	public void printBiab() {
 		ArrayList<Mattress> mattresses = MattressDatabase.getBed();
-		for(Mattress m: mattresses) {
-			if (m.getType().contains("Bed In A Box")){
+		for (Mattress m : mattresses) {
+			if (m.getType().contains("Bed In A Box")) {
 				System.out.println(m.toString());
 			}
 		}
-		
+
 	}
-	
+
+	/**
+	 * filters the mattresses by type.
+	 * 
+	 * @param mattressList
+	 * @param mattressType
+	 * @return
+	 */
 	public static ArrayList<Mattress> filterByType(ArrayList<Mattress> mattressList, String mattressType) {
-		// takes in ArrayList and filters by price of mattress that the user specifies.
 		ArrayList<Mattress> matchMattress = new ArrayList<>();
 		for (Mattress m : mattressList) {
 			if (m.getType().equals(mattressType)) {

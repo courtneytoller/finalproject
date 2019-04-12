@@ -1,14 +1,17 @@
 package cit260final;
 
-import java.util.Scanner;
-import java.io.File;
 import java.util.ArrayList;
 import java.io.PrintStream;
 
 public abstract class BedQuizData extends MattressDatabase {
-
+	/**
+	 * filters user input for prices that matches each mattress
+	 * 
+	 * @param mattresses
+	 * @param maxPrice
+	 * @return
+	 */
 	public static ArrayList<Mattress> filterByPrice(ArrayList<Mattress> mattresses, double maxPrice) {
-		// takes in ArrayList and filters by price of mattress that the user specifies.
 		ArrayList<Mattress> matchMattress = new ArrayList<>();
 		for (Mattress m : mattresses) {
 			if (m.getPrice() <= maxPrice) {
@@ -18,9 +21,14 @@ public abstract class BedQuizData extends MattressDatabase {
 		return matchMattress;
 	}
 
+	/**
+	 * filters user input for firmness that matches each mattress
+	 * 
+	 * @param mattresses
+	 * @param maxFirmness
+	 * @return
+	 */
 	public static ArrayList<Mattress> filterByFirmness(ArrayList<Mattress> mattresses, int maxFirmness) {
-		// takes in ArrayList and filters by firmness of mattress that the user
-		// specifies.
 		ArrayList<Mattress> matchMattress = new ArrayList<>();
 		for (Mattress m : mattresses) {
 			if (m.getFirmness() <= maxFirmness) {
@@ -30,6 +38,13 @@ public abstract class BedQuizData extends MattressDatabase {
 		return matchMattress;
 	}
 
+	/**
+	 * filters user input for position that matches each mattress
+	 * 
+	 * @param mattresses
+	 * @param maxPosition
+	 * @return
+	 */
 	public static ArrayList<Mattress> filterByPosition(ArrayList<Mattress> mattresses, String maxPosition) {
 		ArrayList<Mattress> matchMattress = new ArrayList<>();
 		for (Mattress m : mattresses) {
@@ -40,10 +55,14 @@ public abstract class BedQuizData extends MattressDatabase {
 		return matchMattress;
 	}
 
+	/**
+	 * prints the user input to a new file.
+	 * 
+	 * @param mattresses
+	 * @param out
+	 */
 	public static void printMattressData(ArrayList<Mattress> mattresses, PrintStream out) {
-		// this will return found mattresses and bring in the three recommended
-		// mattresses. this will print
-		// to file so user can have record of results.
+		// this will print to file so user can have record of results.
 		for (Mattress m : mattresses) {
 			out.println(m);
 

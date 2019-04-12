@@ -39,10 +39,8 @@ public class MainMenu extends Menu {
 	 */
 	@Override
 	protected MenuItem[] getMenuItems() {
-		return new MenuItem[] { new MenuItem('1', "Mattress Menu"),
-				new MenuItem('2', "Find the Best Mattress for You"),
-				new MenuItem('F', "Financial"),
-				new MenuItem('Q', "Quit Program") };
+		return new MenuItem[] { new MenuItem('1', "Mattress Menu"), new MenuItem('2', "Find the Best Mattress for You"),
+				new MenuItem('F', "Financial"), new MenuItem('Q', "Quit Program") };
 	}
 
 	/**
@@ -80,7 +78,7 @@ public class MainMenu extends Menu {
 
 	/**
 	 * calculateFinance calculates monthly payment for mattress base payment based
-	 * on 1(5%), 3(3%), or 5(2%) years userInput class we will pull price, amount of
+	 * on 1(5%), 3(3%), or 5(1%) years userInput class we will pull price, amount of
 	 * years, and any cash down method will return payment and display for user
 	 * calculation code adapted from CodeAcademy;
 	 * 
@@ -90,8 +88,6 @@ public class MainMenu extends Menu {
 	 * @return
 	 */
 	private static double calculateFinance(double price, int years, double cashDown) {
-		// do finance calculations copy and paste from previous assignment loan payment
-		// :)
 		double interestRate = 0;
 		double remainingBalance = price - cashDown;
 		int months = years * 12;
@@ -120,20 +116,19 @@ public class MainMenu extends Menu {
 	 */
 	private void handleFinance() {
 		Scanner input = new Scanner(System.in);
-		
+
 		try {
-			// prompt, trying to figure it out...
+			// prompt user for price of mattress
 			System.out.print("Please Enter Mattress Price:");
-			// String prompt= prompt("Please Enter Mattress Price:");
 			double price = input.nextDouble();
-			// check for negative number
+			// check for invalid input
 			while (price < 0) {
 				System.err.println("Only positive number, please.");
 				System.out.println("");
 				System.out.println("Please re-enter price: ");
 				price = input.nextDouble();
 			}
-
+			// prompt user for number of years to finance
 			System.out.print("Would you like to finance for 1, 3 or 5 years?");
 			int years = input.nextInt();
 
@@ -146,25 +141,26 @@ public class MainMenu extends Menu {
 
 			}
 
-			// for loop to check for valid input 1, 3, 5
+			// prompt user for amount down
 			System.out.print("How much money would you like to put down?");
 			double cashDown = input.nextDouble();
 			while (cashDown < 0) {
-				System.err.println("Only positive number, please.");
+				// exception for incorrect input
+				System.err.println("Only positive numbers, please.");
 				System.out.println("");
 				System.out.println("Please re-enter price:\n");
 				cashDown = input.nextDouble();
 			}
-			// mismatch handling here.
+
 			double result = calculateFinance(price, years, cashDown);
-			System.out.printf("Your Monthly Payment is: $%.2f\n", result);
-			// look at catch again see what exception we need
-			// figure out no such element exception
+			System.out.printf("Your Monthly Payment would be: $%.2f\n", result);
+			// Exception Handling
 		} catch (InputMismatchException ex) {
 			System.err.println("Input not accepted, enter numbers only: ");
 			input.nextLine();
-			
-		}
+			handleFinance();
+			System.out.println("");
 
+		}
 	}
 }

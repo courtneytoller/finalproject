@@ -4,7 +4,6 @@ import java.util.Scanner;
 import java.util.InputMismatchException;
 import java.util.ArrayList;
 import cit260final.BedQuizData;
-import java.io.PrintWriter;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -69,10 +68,12 @@ public class MattressSearchMenu extends Menu {
 	}
 
 	// try with catch statements to close out scanner
+	/**
+	 * prompts user for input and process finance.
+	 */
 	private void handleQuizOptions() {
 		Scanner input = new Scanner(System.in);
-		// String back = "back";
-		// String side = "side";
+
 		try {
 			// Prompt user for price
 			System.out.print("What is the maximum price you are willing to spend? ");
@@ -84,7 +85,7 @@ public class MattressSearchMenu extends Menu {
 				filterByPrice = input.nextDouble();
 
 			}
-			// Prompt for firmness from 1-5 soft, medium, hard
+			// Prompt for firmness from 1-7
 			System.out.print("What is your preferred firmness 1-7? 1 being softest 7 being most firm");
 			int filterByFirmness = input.nextInt();
 			while (filterByFirmness < 0 || filterByFirmness > 7) {
@@ -94,8 +95,6 @@ public class MattressSearchMenu extends Menu {
 				filterByFirmness = input.nextInt();
 			}
 			// prompt for position back or side
-			// IS THIS GOING TO WORK WITH THE STRING TO INT CONVERSION?
-
 			boolean validAnswer = false;
 			while (!validAnswer) {
 				System.out.print("What is your preferred sleeping position? back, side");
@@ -109,40 +108,48 @@ public class MattressSearchMenu extends Menu {
 					System.err.println("Please put in back or side only");
 
 				}
+
 				ArrayList<Mattress> result = processQuizOptions(filterByPrice, filterByFirmness, filterByPosition);
-				
+
 				System.out.println("The Mattresses that match your specifications are: ");
 				BedQuizData.printMattressData(result, System.out);
-				String filename= prompt("Enter the file name to save report");
-				if (filename.trim().length()==0) {
+				String filename = prompt("Enter the file name to save report");
+				if (filename.trim().length() == 0) {
 					continue;
 				}
-				PrintStream out= new PrintStream(new FileOutputStream(filename));
+				PrintStream out = new PrintStream(new FileOutputStream(filename));
 				BedQuizData.printMattressData(result, out);
 				out.flush();
 				out.close();
 			}
-			
+
 		} catch (InputMismatchException ex) {
-			System.err.println("Incorrect input. Please try again.");
+			System.err.println("Incorrect input. Please Try Again.");
+			System.out.println("");
+			handleQuizOptions();
 			System.out.print("");
-		}catch (IOException ex) {
+
+		} catch (IOException ex) {
 			System.err.println("Could not open File");
-			
+
 		}
-		// process Quiz options to get filtered results
-		// using a for each loop print out the matching mattresses
+
 	}
 
+	/**
+	 * takes the parameters and filters down to the matching mattresses
+	 * 
+	 * @param filterByPrice
+	 * @param filterByFirmness
+	 * @param filterByPosition
+	 * @return
+	 */
 	private ArrayList<Mattress> processQuizOptions(double filterByPrice, int filterByFirmness,
 			String filterByPosition) {
-		// filter user input to arrays that will find
 		ArrayList<Mattress> mattresses = MattressDatabase.getBed();
 		mattresses = BedQuizData.filterByPrice(mattresses, filterByPrice);
 		mattresses = BedQuizData.filterByFirmness(mattresses, filterByFirmness);
 		mattresses = BedQuizData.filterByPosition(mattresses, filterByPosition);
-		// second parameter passed through the method will look for individual mattress
-		// mattresses = MattressMenu.filterByType(mattresses, "Traditional");
 		return mattresses;
 	}
 
