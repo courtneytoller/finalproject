@@ -58,7 +58,7 @@ public class MattressMenu extends Menu {
 			processPrintMattress();
 			break;
 		case '2':
-			//printBiab();
+			printBiab();
 
 			break;
 		case '3':
@@ -84,10 +84,7 @@ public class MattressMenu extends Menu {
 	 * @param database
 	 * @return
 	 */
-	// public static void handleAll(ArrayList<Mattress> mattressList) {
-	// String result = printMattress(<ArrayList<Mattress>);
-	// return result;
-	// }
+	
 	private void processPrintMattress() {
 		ArrayList<Mattress> mattresses = MattressDatabase.getBed();
 		for(Mattress m: mattresses) {
@@ -96,17 +93,6 @@ public class MattressMenu extends Menu {
 		
 	}
 
-	/*public static ArrayList<Mattress> printMattress(ArrayList<Mattress> mattressList) {
-		ArrayList<Mattress> mattresses = new ArrayList<>();
-		for (Mattress m : mattressList) {
-			
-				}
-		}
-		
-		return mattresses;
-
-	}
-*/
 	/**
 	 * displays all bed in a box mattresses
 	 * 
@@ -114,16 +100,27 @@ public class MattressMenu extends Menu {
 	 * @param typeToFind
 	 * @return
 	 */
-	public static ArrayList<Mattress> printBiab(ArrayList<Mattress> mattressList, String position) {
+	public void printTraditional() {
 		ArrayList<Mattress> mattresses = MattressDatabase.getBed();
-		for (Mattress m : mattressList) {
-			if (m.getPosition().equals(position)) {
-				mattresses.add(m);
+		for(Mattress m: mattresses) {
+			if (m.getType().contains("Traditional")){
+				System.out.println(m.toString());
 			}
 		}
-		mattresses = MattressMenu.filterByType(mattresses, "Bed-In-A-Box");
-		return mattresses;
+		//mattresses = MattressMenu.filterByType(mattresses, "Bed-In-A-Box");
+		//return mattresses;
 	}
+	
+	public void printBiab() {
+		ArrayList<Mattress> mattresses = MattressDatabase.getBed();
+		for(Mattress m: mattresses) {
+			if (m.getType().contains("Bed In A Box")){
+				System.out.println(m.toString());
+			}
+		}
+		
+	}
+	
 	public static ArrayList<Mattress> filterByType(ArrayList<Mattress> mattressList, String mattressType) {
 		// takes in ArrayList and filters by price of mattress that the user specifies.
 		ArrayList<Mattress> matchMattress = new ArrayList<>();
@@ -142,21 +139,4 @@ public class MattressMenu extends Menu {
 	 * @param typeToFind
 	 * @return
 	 */
-
-	public static ArrayList<Mattress> processTraditional(ArrayList<Mattress> mattressList, String mattressType) {
-
-		ArrayList<Mattress> mattresses = MattressDatabase.getBed();
-		for (Mattress m : mattressList) {
-			if (m.getType().equals(mattressType)) {
-				mattresses.add(m);
-			}
-		}
-		return mattresses;
-	}
-
-	public static ArrayList<Mattress> printTraditional() {
-		ArrayList<Mattress> mattresses = MattressDatabase.getBed();
-
-		return processTraditional(mattresses, "Traditional");
-	}
 }
